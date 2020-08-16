@@ -5,7 +5,7 @@ const Index = () => {
     const file = e.target.files;
     const form = new FormData();
     form.append("files", file[0], file[0].name);
-    const  request = await fetch("/api/upload", {
+    const  request = await fetch("/upload", {
       method: "POST",
       body: form,
     });
