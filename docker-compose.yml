@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+    app:
+        build: .
+        ports:
+            - '8000:8000'
+        environment: 
+            - 'GCLOUD_STORAGE_BUCKET='
+            - 'GOOGLE_APPLICATION_CREDENTIALS='
