@@ -1,8 +1,11 @@
 import express from "express";
 import next from "next";
 import { parse } from "url";
+import { app as fileUpload } from "./api/upload";
 
 const app = express();
+
+app.use("/api/upload", fileUpload);
 
 const dev = process.env.NODE_ENV !== "production";
 const prod = process.env.NODE_ENV === "production";

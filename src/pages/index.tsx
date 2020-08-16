@@ -1,7 +1,18 @@
 import react from "react";
 
 const Index = () => {
-  return <h1>Hello transcriber</h1>;
+  const handleUpload = async (e) => {
+    const file = e.target.files;
+    const form = new FormData();
+    form.append("files", file[0], file[0].name);
+    const  request = await fetch("/api/upload", {
+      method: "POST",
+      body: form,
+    });
+    const response = await request.json();
+    console.log("Response", response);
+  };
+  return <input type="file" multiple onChange={(e) => handleUpload(e)} />;
 };
 
 export default Index;
