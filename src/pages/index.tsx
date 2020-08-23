@@ -1,11 +1,11 @@
-import react from "react";
+import React from "react";
 
 const Index = () => {
   const handleUpload = async (e) => {
     const file = e.target.files;
     const form = new FormData();
     form.append("files", file[0], file[0].name);
-    const  request = await fetch("/upload", {
+    const request = await fetch("/upload", {
       method: "POST",
       body: form,
     });
